@@ -1,0 +1,70 @@
+body{
+    background-image: url("../Assets/background.gif");
+    background-position: center;
+    background-size: cover;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-attachment: fixed;
+    margin-left: 10vh;
+    margin-right: 10vh;
+}
+
+h1{
+    font-family: header_font;
+    font-size: 128px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+    color: #d48134;
+    background: 
+        linear-gradient(90deg,#e25a00 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%,
+        linear-gradient(#e25a00 0 0) 0% 100%/var(--_p,0%) 0.1em no-repeat;
+    -webkit-background-clip: text,padding-box;
+        background-clip: text,padding-box;
+    transition: 0.5s;
+
+    cursor: pointer;
+}
+
+h1:hover{
+    --_p: 100%;
+    border: 5px solid #fff;
+}
+
+h2{
+    font-size: 36px;
+    font-family: header_font;
+    color:#fff;
+    background: 
+        linear-gradient(90deg, #fff 50%, #000 0) calc(100% - var(--_p2,0%))/200% 100%,
+        linear-gradient(#fff 0 0) 0% 100%/var(--_p2,0%) 0.1em no-repeat;
+    -webkit-background-clip: text,padding-box;
+        background-clip: text,padding-box;
+    transition: 0.5s;
+
+    cursor: pointer;
+}
+
+h2:hover{
+    --_p2: 100%;
+}
+
+article{
+    text-align: center;
+}
+
+p{
+    font-family: paragraph_font;
+    font-size: 18px;
+}
+/*Fonts*/
+@font-face {
+    font-family: header_font;
+    src: url("../Assets/Fonts/dpcomic.ttf");
+}
+
+@font-face {
+    font-family: paragraph_font;
+    src: url("../Assets/Fonts/kongtext.ttf");
+}
