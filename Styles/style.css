@@ -5,13 +5,13 @@ body{
     overflow-y: scroll;
     overflow-x: hidden;
     background-attachment: fixed;
-    margin-left: 10vh;
-    margin-right: 10vh;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
 }
 
 h1{
     font-family: header_font;
-    font-size: 128px;
+    font-size: 8vh;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -33,7 +33,7 @@ h1:hover{
 }
 
 h2{
-    font-size: 36px;
+    font-size: 4vh;
     font-family: header_font;
     color:#fff;
     background: 
@@ -56,8 +56,23 @@ article{
 
 p{
     font-family: paragraph_font;
-    font-size: 18px;
+    font-size: 2vh;
 }
+
+li{
+    font-family: paragraph_font;
+    font-size: 2vh;
+}
+
+ul{
+    list-style-type: ">";
+}
+
+img:hover{
+    transform: rotateY(360deg);
+    transition: 1s;
+}
+
 /*Fonts*/
 @font-face {
     font-family: header_font;
