@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Dalmatinski u obični tekst
+    </title>
+    <!--Bootstrap with its required JS and CSS files with crossorigin and integrity attributes-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ 
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <style>
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 40%;
+              }
+        </style>
+    
+
+</head>
+
+<body>
+    <div class="container">
+        <br>
+
+        <!-- create a center div to hold the header -->
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center">Konverter<br>Dalmatinski u obični tekst</h1>
+            </div>
+        </div>
+        <!-- Bootstrap form for input text -->
+        <form>
+            <div class="form-group">
+                <label for="text">Dalmatinski:</label>
+                <textarea class="form-control" id="text" name="text"></textarea>
+                <label for="result">
+                    Običan tekst:
+                </label>
+                <textarea id="result" class="form-control" readonly></textarea>
+            </div>
+            <!--Button to copy text to clipboard-->
+            <button type="button" class="btn btn-primary" id="copy">Copy</button>
+
+        </form>
+        <div class="row">
+            <div class="col-12 center-image">
+              <img src="volinteajduce.jpg" alt="Your Image" class="img-fluid" style="width: 60vh">
+            </div>
+          </div>
+
+    </div>
+</body>
+<script>
+    // create a function to convert binary to text
+    function binaryAgent(str) {
+        // var str = ""
+        str = str.replaceAll(" ", "").toLowerCase().replaceAll(".", "").replaceAll("?", "").replaceAll("!", "").replaceAll("a", "0").replaceAll("e", "1")
+        console.log("INPUT", str)
+        // Split the string into binary chunks of 8 characters each
+        var binaryChunks = [];
+        for (var i = 0; i < str.length; i += 8) {
+            binaryChunks.push(str.slice(i, i + 8));
+        }
+        console.log("CHUNK", binaryChunks)
+        var binCode = [];
+    
+        // Convert each binary chunk to its ASCII character equivalent
+        for (var j = 0; j < binaryChunks.length; j++) {
+            binCode.push(String.fromCharCode(parseInt(binaryChunks[j], 2)));
+        }
+    
+        // Join the ASCII characters to form the resulting string
+        return binCode.join("");
+    }
+    
+
+    // add event listener to input change
+    $("#text").on("input", function () {
+        var text = $(this).val();
+        var result = binaryAgent(text.trim());
+        $("#result").val(String(result.toString()));
+    });
+
+    // add event listener to button click
+    $("#copy").on("click", function () {
+        var text = $("#result").val();
+        var result = binaryAgent(text.trim());
+        $("#result").val(String(result.toString()));
+    });
+
+</script>
+
+</html>

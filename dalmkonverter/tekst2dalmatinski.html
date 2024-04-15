@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap with it's required CSS and JS files with crossorigin attribute and integrity attribute -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+          }
+    </style>
+
+
+    <title>Obični tekst u dalmatinski</title>
+</head>
+
+<body>
+    <div class="container">
+        <br>
+
+        <!-- create a center div to hold the header -->
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center">Konverter<br>Obični tekst u dalmatinski</h1>
+            </div>
+        </div>
+        <!-- Bootstrap form for input text -->
+        <form>
+            <div class="form-group">
+                <label for="text">Tekst:</label>
+                <textarea class="form-control" id="text" name="text"></textarea>
+                <label for="result">
+                    Rezultat:
+                </label>
+
+                <textarea id="result" class="form-control" readonly></textarea>
+            </div>
+            <!--Button to copy text to clipboard-->
+            <button type="button" class="btn btn-primary" id="copy">Kopiraj</button>
+
+        </form>
+        <div class="row">
+            <div class="col-12 center-image">
+              <img src="volinteajduce.jpg" alt="Your Image" class="img-fluid" style="width: 60vh">
+            </div>
+          </div>
+    </div>
+
+</body>
+
+<script>
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
+
+    function convertToDalmatinski(text) {
+        var result = '';
+        var final_result = '';
+        for (var i = 0; i < text.length; i++) {
+            var char = text[i];
+            var code = char.charCodeAt(0);
+            var binary = code.toString(2);
+            // Adding leading zeros to ensure 7-bit representation
+            binary = binary.padStart(8, '0');
+            result += binary;
+        }
+        // console.log("BASE", result, ":", text)
+        for (var i = 0; i < result.length; i++) {
+            var char0or1 = result[i];
+            var AorEChar = (char0or1 === "0") ? "a" : "e";
+            // var AorEChar = char0or1
+            // console.log("Why", result[i-1] === " ");
+            if (final_result.slice(-1) === " ") {
+                final_result += AorEChar.toUpperCase();
+            }
+            else {
+                final_result += AorEChar;
+            }
+            if (getRandomInt(6) === 5) {
+                final_result += ["?", "!", "."][getRandomInt(2)]
+                final_result += " ";
+            }
+        }
+        return final_result.charAt(0).toUpperCase() + final_result.slice(1).trimEnd() + ".";
+    }
+
+    // add a event listener to the input change
+    document.getElementById('text').addEventListener('input', function (e) {
+        const text = e.target.value;
+        const result = convertToDalmatinski(text);
+        document.getElementById('result').value = result;
+    });
+
+    // add event listener to the button
+    document.getElementById('copy').addEventListener('click', function (e) {
+        const text = document.getElementById('result').value;
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        textArea.remove();
+    });
+
+
+
+
+</script>
+
+</html>
