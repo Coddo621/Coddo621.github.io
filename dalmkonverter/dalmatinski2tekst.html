@@ -8,10 +8,8 @@
     <title>
         Dalmatinski u obični tekst
     </title>
-    <!--Bootstrap with its required JS and CSS files with crossorigin and integrity attributes-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
- 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
         <style>
@@ -27,35 +25,30 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="banner">
         <br>
-
-        <!-- create a center div to hold the header -->
         <div class="row">
             <div class="col-md-12">
                 <h1 class="text-center">Konverter<br>Dalmatinski u obični tekst</h1>
             </div>
         </div>
-        <!-- Bootstrap form for input text -->
         <form>
             <div class="form-group">
                 <label for="text">Dalmatinski:</label>
-                <textarea class="form-control" id="text" name="text"></textarea>
+                <textarea id="text" name="text"></textarea>
                 <label for="result">
                     Običan tekst:
                 </label>
-                <textarea id="result" class="form-control" readonly></textarea>
+                <textarea id="result" readonly></textarea>
             </div>
-            <!--Button to copy text to clipboard-->
-            <button type="button" class="btn btn-primary" id="copy">Copy</button>
-
+            <button type="button" class="btn btn-primary" id="copy" style="margin-bottom: 30px;">Kopiraj</button>
         </form>
         <div class="row">
             <div class="col-12 center-image">
               <img src="volinteajduce.jpg" alt="Your Image" class="img-fluid" style="width: 60vh">
             </div>
           </div>
-
+          <h2><a href="index.html">Natrag</a></h2>
     </div>
 </body>
 <script>

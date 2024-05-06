@@ -1,5 +1,5 @@
 body{
-    background-image: url("../Assets/background.gif");
+    background-image: url("../Assets/Images/background.gif");
     background-position: center;
     background-size: cover;
     overflow-y: scroll;
@@ -71,6 +71,13 @@ ul{
 img:hover{
     transform: rotateY(360deg);
     transition: 1s;
+}
+
+footer{
+    border: 5px solid #fff;
+    background-color: #000;
+    color: #fff;
+    display: block;
 }
 
 /*Fonts*/
