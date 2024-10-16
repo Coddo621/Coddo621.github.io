@@ -11,19 +11,17 @@ body{
 
 h1{
     font-family: header_font;
-    font-size: 8vh;
+    font-size: 7vw;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    
     color: #d48134;
     background: 
         linear-gradient(90deg,#e25a00 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%,
-        linear-gradient(#e25a00 0 0) 0% 100%/var(--_p,0%) 0.1em no-repeat;
+        linear-gradient(#e25a00 0 0) 0% 100%/var(--_p,0%) 0.1vw no-repeat;
     -webkit-background-clip: text,padding-box;
-        background-clip: text,padding-box;
+    background-clip: text,padding-box;
     transition: 0.5s;
-
     cursor: pointer;
 }
 
