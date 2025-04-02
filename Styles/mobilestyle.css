@@ -1,0 +1,71 @@
+@media screen and (max-width: 768px) {
+    header{
+        all: unset;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: black;
+        text-align: center;
+        height: 10%;
+    }
+
+    h1{
+        all: unset;
+        font-family: header_font;
+        font-size: 7vw;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        color: #d48134;
+    }
+
+    h1:hover{
+        all: unset;
+        font-family: header_font;
+        font-size: 7vw;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        color: #d48134;
+    }
+
+    .h2_frame{
+        border: 5px solid #fff;
+        background-color: #000;
+        color: #fff;
+        margin-left: 25%;
+        margin-right: 25%;
+        text-align: center;
+    }
+
+    h2{
+        all: unset;
+        font-size: 7vh;
+        font-family: header_font;
+        color:#fff;
+        
+    }
+
+    img{
+        width: 100%;
+        height: auto;
+    }
+
+    img:hover{
+        all: unset;
+    }
+
+    
+
+    @font-face {
+        font-family: header_font;
+        src: url("../Assets/Fonts/dpcomic.ttf");
+    }
+
+    @font-face {
+        font-family: paragraph_font;
+        src: url("../Assets/Fonts/kongtext.ttf");
+    }
+}

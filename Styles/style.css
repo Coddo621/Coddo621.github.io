@@ -11,14 +11,14 @@ body{
 
 h1{
     font-family: header_font;
-    font-size: 7vw;
+    font-size: 5vw;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     color: #d48134;
     background: 
         linear-gradient(90deg,#e25a00 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%,
-        linear-gradient(#e25a00 0 0) 0% 100%/var(--_p,0%) 0.1vw no-repeat;
+        linear-gradient(#e25a00 0 0) 0% 100%/var(--_p,0%) 0.5vw no-repeat;
     -webkit-background-clip: text,padding-box;
     background-clip: text,padding-box;
     transition: 0.5s;
@@ -53,6 +53,8 @@ article{
 }
 
 p{
+    margin-left: 2.5%;
+    margin-right: 2.5%;
     font-family: paragraph_font;
     font-size: 2vh;
 }
@@ -67,7 +69,7 @@ ul{
 }
 
 img:hover{
-    transform: rotateY(360deg);
+    transform: scale(1.5);
     transition: 1s;
 
 }
@@ -100,17 +102,6 @@ footer{
     text-align: center;
 }
 
-/*Fonts*/
-@font-face {
-    font-family: header_font;
-    src: url("../Assets/Fonts/dpcomic.ttf");
-}
-
-@font-face {
-    font-family: paragraph_font;
-    src: url("../Assets/Fonts/kongtext.ttf");
-}
-
 /*Custom DIVs*/
 .h2_frame{
     border: 5px solid #fff;
@@ -122,4 +113,13 @@ footer{
     border: 5px solid #fff;
     background-color: #000;
     color: #fff;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: black;
 }
