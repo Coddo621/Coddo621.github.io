@@ -68,12 +68,6 @@ ul{
     list-style-type: ">";
 }
 
-img:hover{
-    transform: scale(1.5);
-    transition: 1s;
-
-}
-
 iframe{
     display: block;
 }
@@ -122,4 +116,14 @@ header {
     width: 100%;
     z-index: 1000;
     background-color: black;
+}
+
+@font-face {
+    font-family: header_font;
+    src: url("../Assets/Fonts/dpcomic.ttf");
+}
+
+@font-face {
+    font-family: paragraph_font;
+    src: url("../Assets/Fonts/kongtext.ttf");
 }
